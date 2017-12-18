@@ -13,8 +13,8 @@ class Node(object):
         self.right = None
 
     def insert(self, value):
-        '''Adds a value as a leaf to a tree. If the value already exists,
-           don't do anything.'''
+        '''Appends a value as a leaf to the tree. Returns without doing anything
+           if the value already exists.'''
         if value == self.data:
             return
         elif value <= self.data:
