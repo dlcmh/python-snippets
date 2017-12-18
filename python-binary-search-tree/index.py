@@ -24,12 +24,29 @@ class Node(object):
             else:
                 self.right.insert(value)
 
+    def contains(self, value):
+        if value == self.data:
+            return True
+        elif value < self.data:
+            if self.left is None:
+                return False
+            else:
+                return self.left.contains(value)
+        else:
+            if self.right is None:
+                return False
+            else:
+                return self.right.contains(value)
+
 n = Node(10)
 n.insert(8)
 n.insert(98)
 n.insert(-200)
 n.insert(2)
 n.insert(101)
+
+print(n.contains(2)) # True
+print(n.contains(20)) # False
 
 # https://stackoverflow.com/a/35804583/998664
 print(json.dumps(json.loads(jsonpickle.encode(n)), indent=4))
