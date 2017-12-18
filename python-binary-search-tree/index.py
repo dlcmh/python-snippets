@@ -13,7 +13,11 @@ class Node(object):
         self.right = None
 
     def insert(self, value):
-        if value <= self.data:
+        '''Adds a value as a leaf to a tree. If the value already exists,
+           don't do anything.'''
+        if value == self.data:
+            return
+        elif value <= self.data:
             if self.left is None:
                 self.left = Node(value)
             else:
@@ -44,6 +48,7 @@ n.insert(98)
 n.insert(-200)
 n.insert(2)
 n.insert(101)
+n.insert(101) # value will not get inserted since it's a duplicate
 
 print(n.contains(2)) # True
 print(n.contains(20)) # False
