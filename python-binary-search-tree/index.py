@@ -28,6 +28,8 @@ n = Node(10)
 n.insert(8)
 n.insert(98)
 n.insert(-200)
+n.insert(2)
+n.insert(101)
 
 # https://stackoverflow.com/a/35804583/998664
 print(json.dumps(json.loads(jsonpickle.encode(n)), indent=4))
@@ -42,7 +44,12 @@ print(json.dumps(json.loads(jsonpickle.encode(n)), indent=4))
             "py/object": "__main__.Node",
             "data": -200,
             "left": null,
-            "right": null
+            "right": {
+                "py/object": "__main__.Node",
+                "data": 2,
+                "left": null,
+                "right": null
+            }
         },
         "right": null
     },
@@ -50,7 +57,12 @@ print(json.dumps(json.loads(jsonpickle.encode(n)), indent=4))
         "py/object": "__main__.Node",
         "data": 98,
         "left": null,
-        "right": null
+        "right": {
+            "py/object": "__main__.Node",
+            "data": 101,
+            "left": null,
+            "right": null
+        }
     }
 }
 '''
